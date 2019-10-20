@@ -1,7 +1,7 @@
 dist
-test/buffers/*
-test/html/*
-test/screenshots/*
+test/buffers/*.json
+test/html/*.html
+test/screenshots/*.png
 test/log.txt
 test/junit.xml
 **/*.js
