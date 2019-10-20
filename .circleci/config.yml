@@ -24,7 +24,7 @@ jobs:
     steps:
       - setup_js_environment
       - run: npm i puppeteer
-      - run: npm run test
+      - run: npm run test:ci
 
   lint_ui:
     docker:
