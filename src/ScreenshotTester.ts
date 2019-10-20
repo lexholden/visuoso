@@ -11,11 +11,16 @@ import { Logger } from './utils/Logger'
 const serverpath = join(__dirname, '..', 'test')
 
 export class ScreenshotTester {
-  static executor: DockerExecutor
+  static executor: Executor
 
   static async initialize() {
     Logger.log('\nINITIALIZING THE SCREENSHOT TESTER')
-    ScreenshotTester.executor = new DockerExecutor() // TODO Support Docker
+    if (process.env.CI) {
+      ScreenshotTester.executor = new LocalExecutor()
+    } else {
+      ScreenshotTester.executor = new DockerExecutor() // TODO Support Docker
+    }
+
     await ScreenshotTester.executor.initialize()
   }
 
