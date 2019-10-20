@@ -43,9 +43,5 @@
       }
     ]
   },
-  "rulesDirectory": [
-    "tslint-no-unused-expression-chai",
-    "codelyzer",
-    "node_modules/tslint-origin-ordered-imports-rule/dist"
-  ]
+  "rulesDirectory": []
 }
