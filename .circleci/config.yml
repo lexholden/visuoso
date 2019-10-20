@@ -23,6 +23,7 @@ jobs:
       - image: circleci/node:8.9.1
     steps:
       - setup_js_environment
+      - run: npm i puppeteer
       - run: npm run test
 
   lint_ui:
