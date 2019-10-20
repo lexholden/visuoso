@@ -6,11 +6,10 @@ import { PassThrough } from 'stream'
 import { Executor } from '../interfaces'
 import { Logger } from '../utils/Logger'
 
-const docker = new Docker()
-
 export class DockerExecutor implements Executor {
   static DOCKER_CONTAINER_NAME = 'screenshot-tester'
 
+  docker = new Docker()
   container
 
   async initialize() {
@@ -19,16 +18,16 @@ export class DockerExecutor implements Executor {
   }
 
   async startOrCreateContainer() {
-    const containers = await docker.listContainers({ all: true })
+    const containers = await this.docker.listContainers({ all: true })
     const container = containers.find(cont => cont.Names.join('') === `/${DockerExecutor.DOCKER_CONTAINER_NAME}`)
 
     if (container) {
       Logger.log(`we have a container ${container.Image}:${container.Id} (${container.Status})`)
       // logger(`we have a container ${JSON.stringify(container, null, 2)}\n\n`)
-      this.container = await docker.getContainer(container.Id)
+      this.container = await this.docker.getContainer(container.Id)
     } else {
       Logger.log('got nothing! lets create')
-      this.container = await docker.createContainer({
+      this.container = await this.docker.createContainer({
         name: DockerExecutor.DOCKER_CONTAINER_NAME,
         Image: 'buildkite/puppeteer',
         Tty: true,

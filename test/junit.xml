@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" time="5.404">
-  <testsuite name="ScreenshotTester" errors="0" failures="0" skipped="0" timestamp="2019-10-20T02:54:16" time="3.492" tests="1">
-    <testcase classname="ScreenshotTester should share a docker instance between multiple screenshot testers" name="ScreenshotTester should share a docker instance between multiple screenshot testers" time="0.371">
-    </testcase>
-  </testsuite>
-</testsuites>
