@@ -1,6 +1,4 @@
 import * as Docker from 'dockerode'
-// import { } from 'process'
-import { fstat, writeFileSync, appendFileSync } from 'fs'
 import { join } from 'path'
 import { PassThrough } from 'stream'
 import { Executor } from '../interfaces'
@@ -51,7 +49,7 @@ export class DockerExecutor implements Executor {
 
   async configureLogger() {
     // create a single stream for stdin and stdout
-    const logStream = new PassThrough();
+    const logStream = new PassThrough()
     const stream = await this.container.logs({ follow: true, stdout: true, stderr: true })
 
     logStream.on('data', (chunk) => Logger.log(chunk.toString('utf8')))
@@ -79,7 +77,7 @@ export class DockerExecutor implements Executor {
     Logger.log(`attempting to capture a screenshot ${title}`)
     const response = await this.execute(
       ['node', '/home/node/visuoso/dist/cli.js'],
-      [`SCREENSHOT_NAME=${title}`],
+      [`SCREENSHOT_NAME=${title}`]
     )
     // console.log(response)
     return response

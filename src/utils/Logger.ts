@@ -1,5 +1,5 @@
-import { appendFileSync } from "fs";
-import { join } from "path";
+import { appendFileSync } from 'fs'
+import { join } from 'path'
 
 export class Logger {
   static log(...args) {

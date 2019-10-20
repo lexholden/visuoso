@@ -8,6 +8,7 @@
     "build:watch": "tsc -w --outDir dist",
     "lint": "tslint --project ./tsconfig.json",
     "test": "npx jest",
+    "test:ci": "CI=true npx jest",
     "test:watch": "npx jest --watchAll"
   },
   "jest": {

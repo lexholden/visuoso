@@ -14,8 +14,6 @@
     "no-duplicate-imports": [true],
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": [true, "ignore-comments", "ignore-template-strings"],
-    "no-unused-expression-chai": { "severity": "warning" },
-    "origin-ordered-imports": [ true, "any-number-of-blank-lines" ],
     "prefer-const": true,
     "prefer-object-spread": true,
     "quotemark": [true, "single"],
@@ -43,9 +41,5 @@
       }
     ]
   },
-  "rulesDirectory": [
-    "tslint-no-unused-expression-chai",
-    "codelyzer",
-    "node_modules/tslint-origin-ordered-imports-rule/dist"
-  ]
+  "rulesDirectory": []
 }

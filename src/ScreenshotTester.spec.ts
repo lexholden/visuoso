@@ -8,7 +8,7 @@ describe('ScreenshotTester', () => {
 
   it('should share a docker instance between multiple screenshot testers', async() => {
     const screen = await ScreenshotTester.captureScreenshot('TestImage', '<html><head><style>body { padding: 30px; font-family: Helvetica }</style></head><body><h1>Hello Buddy</h1></body></html>');
-    (expect(screen) as any).toMatchImageSnapshot();
+    (expect(screen) as any).toMatchImageSnapshot()
     // (expect(await ScreenshotTester.captureScreenshot('Another Test Image', '<html><body><h1>I Like Pears</h1></body></html>')) as any).toMatchImageSnapshot();
   })
 })

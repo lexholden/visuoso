@@ -20,10 +20,11 @@ commands:
 jobs:
   test_ui:
     docker:
-      - image: circleci/node:8.9.1
+      - image: circleci/node:8.9.1-browsers
     steps:
       - setup_js_environment
-      - run: npm run test
+      - run: npm i puppeteer
+      - run: npm run test:ci
 
   lint_ui:
     docker:
