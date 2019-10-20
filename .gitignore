@@ -1,0 +1,6 @@
+dist
+test/buffers/*
+test/html/*
+test/screenshots/*
+**/*.js
+node_modules
