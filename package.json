@@ -1,11 +1,12 @@
 {
-  "name": "visuoso",
+  "name": "@lexholden/visuoso",
   "version": "1.0.0",
-  "description": "",
+  "description": "Visuoso is a basic library that combines several exisiting tools for visual regression testing (puppeteer, jsdom-screenshot) but wraps them in an optional docker wrapper, where the actual generation of the screenshot can be delegated to a docker container to work around font rendering inconsistencies between OSes.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc --outDir dist",
-    "build:watch": "tsc -w --outDir dist",
+    "build": "tsc --outDir dist --declaration",
+    "build:watch": "npm run build -- -w",
+    "publish": "npm run build && ",
     "lint": "tslint --project ./tsconfig.json",
     "test": "npx jest",
     "test:ci": "CI=true npx jest",
@@ -53,7 +54,7 @@
       "^.+\\.tsx?$": "ts-jest"
     }
   },
-  "author": "",
+  "author": "Alex Holden <a@lexholden.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^24.0.18",
@@ -71,5 +72,22 @@
     "dockerode": "^3.0.2",
     "jest-image-snapshot": "^2.11.0",
     "jsdom-screenshot": "^3.2.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexholden/visuoso.git"
+  },
+  "keywords": [
+    "testing",
+    "visual",
+    "regression",
+    "jest"
+  ],
+  "bugs": {
+    "url": "https://github.com/lexholden/visuoso/issues"
+  },
+  "homepage": "https://github.com/lexholden/visuoso#readme"
 }
