@@ -17,6 +17,10 @@ commands:
             - node_modules
           key: v{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-dependencies-{{ checksum "package.json" }}
 
+  build_production_env:
+    steps:
+      - run: npm run build
+
 jobs:
   test_ui:
     docker:
